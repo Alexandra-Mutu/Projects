@@ -5,32 +5,32 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Entity //adnoteaza ca este o entitate
+@Entity 
 public class Task {
     @Id //cheia primara
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-incrementare
     private Long id;
+
+    //legatura dintre tabele
+    @OneToMany(mappedBy = "task",cascade = CascadeType.ALL) //tip de relatie
+    private List<Subtask> subtasks; //lista de subtask uri
 
     private String titlu;
     private String descriere;
     private Date dueDate;
     private String responsabil;
 
-    @OneToMany //tip de relatie
-    private List<Task> subtasks = new ArrayList<>();
-
     //Constructori cu si fara parametrii
     public Task() {
     }
 
-    public Task(Long id, String titlu, String descriere, Date dueDate, String responsabil) {
-        this.id = id;
+    public Task( String titlu, String descriere, Date dueDate, String responsabil) {
         this.titlu = titlu;
         this.descriere = descriere;
         this.dueDate = dueDate;
         this.responsabil = responsabil;
     }
-    //Getteri si Setteri
+    //getteri si setteri
     public Long getId() {
         return id;
     }
@@ -71,11 +71,11 @@ public class Task {
         this.responsabil = responsabil;
     }
 
-    public List<Task> getSubtasks() {
+    public List<Subtask> getSubtasks() {
         return subtasks;
     }
 
-    public void setSubtasks(List<Task> subtasks) {
+    public void setSubtasks(List<Subtask> subtasks) {
         this.subtasks = subtasks;
     }
 }
