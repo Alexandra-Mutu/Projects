@@ -25,7 +25,7 @@ public class TaskService {
     }
 
     //identifica task-ul dupa id
-    public Optional getTasksById(Long id) {
+    public Optional<Task> getTasksById(Long id) {
         return taskRepository.findById(id);
     }
 
