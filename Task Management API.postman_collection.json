@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "c374ac4e-4211-4dba-b5cb-e8380ba5e717",
+		"name": "Task Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44683266",
+		"_collection_link": "https://alexandramutu-2620109.postman.co/workspace/Alexandra-Mutu's-Workspace~b596f992-9038-4acb-809c-20b9412bbe35/collection/44683266-c374ac4e-4211-4dba-b5cb-e8380ba5e717?action=share&source=collection_link&creator=44683266"
+	},
+	"item": [
+		{
+			"name": "Task_1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titlu\": \"Proiect macroeconomie\",\r\n  \"descriere\": \"Analiza macroeconomica a unei tari\",\r\n  \"dueDate\": \"2025-06-24\",\r\n  \"responsabil\": \"Echipa 1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subtask1_T1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titlu\": \"Analiza PIB\",\r\n  \"descriere\": \"Calculul PIB-ului pentru 2025\",\r\n  \"dueDate\": \"2025-06-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tasks/7/subtasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						"7",
+						"subtasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subtask2_T1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titlu\": \"Analiza inflatie\",\r\n  \"descriere\": \"Calculul ratei inflatiei pentru 2025\",\r\n  \"dueDate\": \"2025-06-10\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tasks/7/subtasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						"7",
+						"subtasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cometariu1_T1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"continut\": \"Proiectul trebuie sa aibe minim 5 pagini.\",\r\n  \"autor\": \"Profesor X\",\r\n  \"date\": \"2025-05-06\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/commenttask/8/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"commenttask",
+						"8",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task_2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titlu\": \"Proiect SO\",\r\n  \"descriere\": \"Crearea unui sistem fictiv de management al utilizatorilor\",\r\n  \"dueDate\": \"2022-10-01\",\r\n  \"responsabil\": \"Matei\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task_3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titlu\": \"Proiect PAW\",\r\n  \"descriere\": \"Crearea unei aplicatii desktop\",\r\n  \"dueDate\": \"2025-06-15\",\r\n  \"responsabil\": \"Elena si Mihai\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comentariu_T3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"continut\": \"Se va utiliza framework-ul .net\",\r\n  \"autor\": \"Profesor Y\",\r\n  \"date\": \"2025-05-06T00:00:00.000+00:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/commenttask/10/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"commenttask",
+						"10",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task_2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titlu\": \"Proiect SO\",\r\n  \"descriere\": \"Crearea unui sistem fictiv de management al utilizatorilor\",\r\n  \"dueDate\": \"2022-10-26\",\r\n  \"responsabil\": \"Matei+Cosmin+George\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tasks/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task_3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tasks/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
