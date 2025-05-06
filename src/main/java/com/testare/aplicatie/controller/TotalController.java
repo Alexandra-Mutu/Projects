@@ -59,17 +59,23 @@ public class TotalController {
         }
     }
 
-
     // === CRUD Subtask ===
 
     @PostMapping("/{taskId}/subtasks")
     public Subtask createSubtask(@PathVariable Long taskId, @RequestBody Subtask subtask) {
-        Optional<Task> task = taskService.getTasksById(taskId);
-        if (task.isPresent()) {
-            subtask.setTask(task.get());
-            return subtaskService.createSubtask(subtask);
+        try {
+            Optional<Task> task = taskService.getTasksById(taskId);
+            if (task.isPresent()) {
+                subtask.setTask(task.get());
+                return subtaskService.createSubtask(subtask);
+            } else {
+                throw new RuntimeException("Task cu ID " + taskId + " nu a fost găsit.");
+            }
+        } catch (Exception e) {
+            System.out.println("Eroare la crearea subtaskului: " + e.getMessage());
+            e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     @GetMapping("/subtasks")

@@ -1,6 +1,9 @@
 package com.testare.aplicatie.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import javax.xml.stream.events.Comment;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,7 +16,20 @@ public class Task {
 
     //legatura dintre tabele
     @OneToMany(mappedBy = "task",cascade = CascadeType.ALL) //tip de relatie
-    private List<Subtask> subtasks; //lista de subtask uri
+    @JsonIgnore
+    private List<Subtask> subtasks=new ArrayList<>(); //lista de subtask uri
+
+    @OneToMany(mappedBy = "task",cascade = CascadeType.ALL) //tip de relatie
+    @JsonIgnore
+    private List<Comentariu> comments=new ArrayList<>();
+
+    public List<Comentariu> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comentariu> comments) {
+        this.comments = comments;
+    }
 
     private String titlu;
     private String descriere;
@@ -21,10 +37,11 @@ public class Task {
     private String responsabil;
 
     //Constructori cu si fara parametrii
+
     public Task() {
     }
 
-    public Task( String titlu, String descriere, Date dueDate, String responsabil) {
+    public Task(String titlu, String descriere, Date dueDate, String responsabil) {
         this.titlu = titlu;
         this.descriere = descriere;
         this.dueDate = dueDate;
